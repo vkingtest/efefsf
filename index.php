@@ -3,7 +3,7 @@ ob_start();
 define('API_KEY','235883845:AAGMvsrHhobzz02gnrSdqA-0wOb6-Gmw5ns');
 $admin = "260559119";
 function bot($method,$datas=[]){
-    $url = "https://api.telegram.org/bot".API_KEY."/".$method;
+    $url = "https://api.pwrtelegram.xyz/bot".API_KEY."/".$method;
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
@@ -45,7 +45,7 @@ if (isset($update->edited_message)){
   //$up = file_get_contents(__DIR__.'/users/'.$eid.'.json');
   //str_replace("edited_message","message",$up);
 }elseif(preg_match('/^\/([Ss]tart)/',$text1)){
-  $text = "به ربات ادیت نکن\nخوش آمدید\nبرای اد کردن من به گروه بر روی لینک زیر بزنید\nhttps://telegram.me/DontEdit_BOT?startgroup=new";
+  $text = "Hi $first_name \n Welcome To Dont Edit Bot";
   bot('sendmessage',[
     'chat_id'=>$chat_id,
     'text'=>$text,
@@ -70,7 +70,7 @@ if (isset($update->edited_message)){
 }elseif(isset($update->message-> new_chat_member )){
 bot('sendMessage',[
       'chat_id'=>$chat_id,
-      'text'=>"به گروه خوش آمدید "
+      'text'=>"سلام خوش آمدی "
     ]);
 }
   
